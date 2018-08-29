@@ -14,9 +14,13 @@ export default class Homepage extends Component{
                 <h1 className="home-title" >SHELFIE</h1>
                 </header>
                 <div className="homepage-buttons">
+                <br />
                 <Link to='/alpha'><button className="home-page-button"><h3 className="homepage-button-text">Shelf A</h3></button></Link>
+                <br/>
                 <Link to ='/bravo'><button className="home-page-button"><h3 className="homepage-button-text">Shelf B</h3></button></Link>
+                <br/>
                 <Link to='/charlie'><button className="home-page-button"><h3 className="homepage-button-text">Shelf C</h3></button></Link>
+                <br/>
                 <Link to='/delta'><button className="home-page-button"><h3 className="homepage-button-text">Shelf D</h3></button></Link>
                 </div>
 

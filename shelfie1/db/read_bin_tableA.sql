@@ -1,0 +1,1 @@
+Select * from TableA where Bin = $1;

@@ -1,0 +1,1 @@
+Update TableA set product_name=$1 , price=$2;

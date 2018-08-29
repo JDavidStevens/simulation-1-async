@@ -1,0 +1,1 @@
+Select Bin from TableA where product_name is not null;
