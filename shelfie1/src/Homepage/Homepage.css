@@ -1,0 +1,42 @@
+.logo-banner{
+    background-color: #AB2A19;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+.home-logo{
+    margin: 15px 15px 15px 350px;
+}
+
+.home-title{
+    margin: 25px 0px 15px 0px;    
+}
+
+.homepage-buttons{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.home-page-button{
+    background-color: #D34735;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    width: 650px;
+    margin-top: 25px;
+    /* margin-bottom: 12px; */
+    height: 80px;
+    border-radius: 15px;
+    font-size: 30px;
+    text-align: left;
+    /* padding-left: 150px;
+    padding-bottom: 80px; */
+}
+
+.homepage-button-text{
+    margin: 13px 25px 25px 175px;
+}
