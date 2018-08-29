@@ -1,0 +1,21 @@
+.shelf-banner{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: #D34735;
+}
+
+.shelf-logo{
+    background-color: #AB2A19;
+    /* margin: 0px 0px 15px 0px; */
+    padding: 15px 85px 12px 85px;
+    margin-bottom: -25px;
+}
+
+
+.shelf-title{
+    /* background-color: #D34735; */
+    /* margin: 0px 0px 0px 0px; */
+    padding: 5px 10px 5px 10px;
+    font-family: 'Open Sans', sans-serif;
+}

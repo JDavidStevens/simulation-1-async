@@ -9,18 +9,19 @@
 }
 
 .home-logo{
-    margin: 15px 15px 15px 350px;
+    margin: 15px 15px 15px 205px;
 }
 
 .home-title{
     margin: 25px 0px 15px 0px;    
 }
 
-.homepage-buttons{
+/* .homepage-buttons{
     display: flex;
     flex-direction: column;
-    
-}
+} */
+
+
 
 .home-page-button{
     background-color: #D34735;
@@ -35,6 +36,10 @@
     text-align: left;
     /* padding-left: 150px;
     padding-bottom: 80px; */
+    
+    border-style: none;
+
+    
 }
 
 .homepage-button-text{
