@@ -7,6 +7,7 @@ import ShelfB from './Shelves/ShelfB';
 import ShelfC from './Shelves/ShelfC';
 import ShelfD from './Shelves/ShelfD';
 import A_add from './Bins/BinA/A_add';
+import InventoryA from './Bins/BinA/InventoryA';
 
 export default <Switch>
 <Route exact path='/' component={Homepage}/>
@@ -14,6 +15,8 @@ export default <Switch>
 <Route path='/bravo' component={ShelfB}/>
 <Route path='/charlie' component={ShelfC}/>
 <Route path='/delta' component={ShelfD}/>
-<Route path='/aadd' component={A_add}/>
+
+<Route path='/aadd/:id' component={A_add}/>
+<Route path='/ainventory/:id' component={InventoryA}/>
 
 </Switch>

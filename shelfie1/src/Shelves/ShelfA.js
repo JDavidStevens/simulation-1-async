@@ -21,11 +21,11 @@ componentDidMount(){
 
     render(){
 
-        let products=this.state.bin.map(element=>{
+        let products=this.state.bin.map((element,index)=>{
             if(element.product_name===null){
-                return <Link to ='/aadd'><button key="element.id" className="bin-no-inv-button">+ Add Inventory</button></Link>
+                return <Link key={index} to ={`/aadd/${element.id}`}><button  className="bin-no-inv-button">+ Add Inventory</button></Link>
               }else{ 
-               return <button key="element.id" className="bin-with-inv-button">Bin {element.id}</button>}
+              return <Link to = {`/ainventory/${element.id}`}><button key="element.id" className="bin-with-inv-button">Bin {element.id}</button></Link>}
                
           })
             
@@ -37,11 +37,7 @@ componentDidMount(){
                <Link to ='/'><img src={logo} className='shelf-logo' alt="logo"/></Link>
                 <h1 className="shelf-title">Shelf A</h1>
                 </header>
-               
-                {products}
-                
-                {/* <div className="shelfpage-div">{products[1]?
-                   <button className="bin-with-inv-button"><h3 className="shelf-button-text">Bin {products.id}</h3></button>:<button className="bin-no-inv-button"><h3 className='shelf-button-text'>+ Add Inventory</h3></button>}</div> */}
+                {products}                
             </div>
         )
     }

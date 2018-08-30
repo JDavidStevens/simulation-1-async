@@ -39,7 +39,7 @@
 
 .bin-no-inv-button{
     background-color: #FFB8AF;
-    color: white;
+    color: black;
     font-family: 'Open Sans', sans-serif;
     width: 650px;
     margin: 25px 300px 0px 300px;
@@ -47,7 +47,7 @@
     height: 80px;
     border-radius: 15px;
     font-size: 30px;
-    text-align: left;
+    text-align: center;
     /* padding-left: 150px;
     padding-bottom: 80px; */
     

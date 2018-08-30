@@ -1,16 +1,31 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 import logo from '../../logo.png';
+import '../add.css';
 
 export default class A_add extends Component{
     constructor(){
         super()
         this.state={
-            product:[],
+            item:{},
+            id:'',
             name:'',
-            price:'',
+            price:''
         }
+
     }
+
+    componentDidMount(){
+       return axios.get(`/api/product_a/${this.props.match.params.id}`).then(response=>{
+            this.setState({id:response.data})
+        })
+    }
+
+    updateBin(id,name,price){
+        axios.put(`/api/product/${id}`,{name,price}).then(results=>{this.setState({item:results.data})})
+    }
+    
 
     handleUpdateName(value){
         this.setState({name:value})
@@ -21,25 +36,21 @@ export default class A_add extends Component{
     }
 
     render(){
-        let banner = this.state.product.map(element=>{
-          return <h1>Add to Bin {element.id}</h1>  
-        })
-
         return(
             <div>
-                <header className='shelf-banner'>
-               <Link to ='/'><img src={logo} className='shelf-logo' alt="logo"/></Link>
-                <h1 className="shelf-title">Shelf A</h1>
-                {banner}
+                <header className='add-banner'>
+               <Link to ='/'><img src={logo} className='add-logo' alt="logo"/></Link>
+                <h1 className="add-title">Shelf A</h1>
+                <h1 className="add-number" >Add to Bin {this.state.id}</h1>
                 </header>
-                <h4>Name</h4>
-                <input onChange={e=>this.handleUpdateName(e.target.value)}/>
+                <h3 className="input-title">Name</h3>
+                <input className="add-input" onChange={e=>this.handleUpdateName(e.target.value)}/>
                 
                 
-                <h4>Price</h4>
-                <input value="$" placeholder="0.00" onChange={e=>this.handleUpdatePrice(e.target.value)}/>
+                <h3 className="input-title">Price</h3>
+                <input className="add-input" placeholder="0.00" onChange={e=>this.handleUpdatePrice(e.target.value)}/>
                 <br/>
-                <button>+ Add Inventory</button>
+                <Link to ='/alpha'><button className="add-button" onClick={()=>this.updateBin(this.state.item.id,this.state.name,this.state.price)}><h1 className="add-button-text">+ Add Inventory</h1></button></Link>
                 
                 </div>
         )
