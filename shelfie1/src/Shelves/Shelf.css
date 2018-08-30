@@ -19,3 +19,41 @@
     padding: 5px 10px 5px 10px;
     font-family: 'Open Sans', sans-serif;
 }
+
+.bin-with-inv-button{
+    background-color: #ED6B5A;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    width: 650px;
+    margin: 25px 300px 0px 300px;
+    /* margin-bottom: 12px; */
+    height: 80px;
+    border-radius: 15px;
+    font-size: 30px;
+    text-align: left;
+    /* padding-left: 150px;
+    padding-bottom: 80px; */
+    
+    border-style: none;
+}
+
+.bin-no-inv-button{
+    background-color: #FFB8AF;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    width: 650px;
+    margin: 25px 300px 0px 300px;
+    /* margin-bottom: 12px; */
+    height: 80px;
+    border-radius: 15px;
+    font-size: 30px;
+    text-align: left;
+    /* padding-left: 150px;
+    padding-bottom: 80px; */
+    
+    border-style: none;
+}
+
+.shelf-button-text{
+    margin: 13px 25px 25px 175px;
+}

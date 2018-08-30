@@ -1,1 +1,1 @@
-delete product_name and price from TableA where Bin=$1;
+delete product_name and price from TableA where id=$1;

@@ -1,1 +1,1 @@
-Select * from TableA where Bin = $1;
+Select * from TableA where id = $1;
