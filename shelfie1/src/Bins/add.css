@@ -8,13 +8,15 @@
 .add-logo{
     background-color: #AB2A19;
     padding: 15px 85px 12px 85px;
-    margin-bottom: -4px;
+    /* margin-bottom: 0px; */
 }
 
 .add-title{
-    padding: 20px 100px 5px 100px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    padding: 5px 100px 5px 100px;
+    color: white;
+    /* margin-top: 0px;
+    margin-bottom: 0px; */
+    text-decoration: none;
 
     
     font-family: 'Open Sans', sans-serif;
