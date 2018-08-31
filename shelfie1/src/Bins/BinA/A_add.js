@@ -18,7 +18,7 @@ export default class A_add extends Component{
 
     componentDidMount(){
        return axios.get(`/api/product_a/${this.props.match.params.id}`).then(response=>{
-            this.setState({id:response.data})
+            this.setState({item:response.data})
         })
     }
 
@@ -39,9 +39,9 @@ export default class A_add extends Component{
         return(
             <div>
                 <header className='add-banner'>
-               <Link to ='/'><img src={logo} className='add-logo' alt="logo"/></Link>
-                <h1 className="add-title">Shelf A</h1>
-                <h1 className="add-number" >Add to Bin {this.state.id}</h1>
+               <Link to ='/' className='add-logo'><img src={logo}  alt="logo"/></Link>
+               <Link to='/alpha' className="add-title"> <h1 >Shelf A</h1></Link>
+                <h1 className="add-number" >Add to Bin {this.props.match.params.id}</h1>
                 </header>
                 <h3 className="input-title">Name</h3>
                 <input className="add-input" onChange={e=>this.handleUpdateName(e.target.value)}/>

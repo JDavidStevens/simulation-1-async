@@ -1,1 +1,1 @@
-Select * from TableA where id = $1;
+Select * from ShelfA where id = $1;

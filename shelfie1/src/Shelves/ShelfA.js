@@ -25,7 +25,7 @@ componentDidMount(){
             if(element.product_name===null){
                 return <Link key={index} to ={`/aadd/${element.id}`}><button  className="bin-no-inv-button">+ Add Inventory</button></Link>
               }else{ 
-              return <Link to = {`/ainventory/${element.id}`}><button key="element.id" className="bin-with-inv-button">Bin {element.id}</button></Link>}
+              return <Link key={index} to = {`/ainventory/${element.id}`}><button key="element.id" className="bin-with-inv-button">Bin {element.id}</button></Link>}
                
           })
             

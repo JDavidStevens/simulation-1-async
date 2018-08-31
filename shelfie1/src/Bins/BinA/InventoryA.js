@@ -13,7 +13,7 @@ export default class InventoryA extends Component{
 
     componentDidMount(){
         return axios.get(`/api/product_a/${this.props.match.params.id}`).then(response=>{
-             this.setState({id:response.data})
+             this.setState({items:response.data})
          })
      }
 
@@ -22,8 +22,8 @@ export default class InventoryA extends Component{
             <div>
                 <header className='add-banner'>
                <Link to ='/'><img src={logo} className='add-logo' alt="logo"/></Link>
-                <h1 className="add-title">Shelf A</h1>
-                <h1 className="add-number" >Bin {this.state.id}</h1>
+               <Link to = '/alpha' className="add-title"> <h1 className="add-title">Shelf A</h1></Link>
+                <h1 className="add-number" >Bin {this.props.match.params.id}</h1>
                 </header>
                 <h1>{this.state.item.product_name}</h1>
             </div>
