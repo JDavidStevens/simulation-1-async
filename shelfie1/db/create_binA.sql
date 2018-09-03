@@ -1,1 +1,1 @@
-Insert Into TableA (Name,Price)Values($1,$2) where id = $1;
+Insert Into shelfA (product_name,Price)Values($1,$2) where id = $1;

@@ -1,1 +1,1 @@
-delete product_name and price from TableA where id=$1;
+update shelfa set product_name= null, price=null where id=$1;

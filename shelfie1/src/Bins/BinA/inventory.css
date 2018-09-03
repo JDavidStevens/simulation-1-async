@@ -1,17 +1,18 @@
-.add-banner{
+.inventory-banner{
     display: flex;
     flex-direction: row;
     color: white;
     background-color: #ffb8af;
+
 }
 
-.add-logo{
+.inventory-logo{
     background-color: #AB2A19;
     padding: 15px 85px 12px 85px;
     /* margin-bottom: 0px; */
 }
 
-.add-title{
+.inventory-title{
     padding: 5px 100px 5px 100px;
     color: white;
     /* margin-top: 0px;
@@ -21,7 +22,7 @@
     background-color: #D34735;
 }
 
-.add-number{
+.inventory-number{
    color:black; 
    padding-left: 25px;
    padding-top: 7px;
@@ -31,8 +32,9 @@ input:focus{
     border-width:5px;  
 }
 
-.add-input{
+.inventory-input{
     border-color: #AB2A19;
+    background-color: white;
     border-radius: 10px;
     border-style:solid;
     /* border-width: 3px; */
@@ -51,9 +53,31 @@ input:focus{
     font-weight: 900;   
 }
 
-.add-button{
+.button-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.edit-button{
+    background-color: lightgray;
+    width: 350px;
+    margin: 25px 45px 0px 325px;
+    height: 80px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.delete-button{
+    background-color: lightgray;
+    width: 350px;
+    margin: 25px 325px 0px 45px;
+    height: 80px;
+    border-radius: 5px;
+    border-style: none;
+}
+.save-button{
     background-color: #40F99b;
-    width: 650px;
+    width: 150px;
     margin: 25px 300px 0px 300px;
     height: 80px;
     border-radius: 50px;
