@@ -1,0 +1,1 @@
+Select * from Inventory where shelf_id=$1;

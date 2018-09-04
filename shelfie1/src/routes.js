@@ -3,25 +3,26 @@ import {Switch, Route} from 'react-router-dom';
 
 import Homepage from './Homepage/Homepage';
 
-import ShelfA from './Shelves/ShelfA';
-import ShelfB from './Shelves/ShelfB';
-import ShelfC from './Shelves/ShelfC';
-import ShelfD from './Shelves/ShelfD';
 
-import A_add from './Bins/BinA/A_add';
-import InventoryA from './Bins/BinA/InventoryA';
+import Shelf from './Shelves/ShelfA';
+// import ShelfB from './Shelves/ShelfB';
+// import ShelfC from './Shelves/ShelfC';
+// import ShelfD from './Shelves/ShelfD';
 
-import B_add from './Bins/BinB/B_add';
-import InventoryB from './Bins/BinB/InventoryB';
+import Add from './Bins/BinA/A_add';
+import Inventory from './Bins/BinA/InventoryA';
 
-import C_add from './Bins/BinC/C_add';
-import InventoryC from './Bins/BinC/InventoryC';
+// import B_add from './Bins/BinB/B_add';
+// import InventoryB from './Bins/BinB/InventoryB';
 
-import D_add from './Bins/BinD/D_add';
-import InventoryD from './Bins/BinD/InventoryD';
+// import C_add from './Bins/BinC/C_add';
+// import InventoryC from './Bins/BinC/InventoryC';
+
+// import D_add from './Bins/BinD/D_add';
+// import InventoryD from './Bins/BinD/InventoryD';
 
 export default <Switch>
-<Route exact path='/' component={Homepage}/>
+{/* <Route exact path='/' component={Homepage}/>
 <Route path='/alpha' component={ShelfA}/>
 <Route path='/bravo' component={ShelfB}/>
 <Route path='/charlie' component={ShelfC}/>
@@ -37,6 +38,13 @@ export default <Switch>
 <Route path='/cinventory/:id' component={InventoryC}/>
 
 <Route path='/dadd/:id' component={D_add}/>
-<Route path='/dinventory/:id' component={InventoryD}/>
+<Route path='/dinventory/:id' component={InventoryD}/> */}
 
+<Route component={Homepage} exact path='/' />
+<Route component={Shelf} path='/shelf/:shelf'/>
+<Route component={Inventory} path='/inventory/:bin'/>
+<Route component={Add} path= '/add/:bin'/>
 </Switch>
+
+//Revised sketch
+
