@@ -1,1 +1,3 @@
-Insert Into shelfA (product_name,Price)Values($1,$2) where id = $1;
+Update shelfA 
+set product_name=$2, price=$3, img=$4
+where id =$1;

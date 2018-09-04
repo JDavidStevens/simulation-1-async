@@ -104,11 +104,15 @@ input:focus{
 }
 .save-button{
     background-color: #40F99b;
-    width: 150px;
-    margin: 25px 300px 0px 300px;
+    width: 350px;
+    margin: 25px 45px 0px 250px;
     height: 80px;
     border-radius: 50px;
     border-style: none;
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 900;
+    outline: none;
 }
 
 .add-button-text{
@@ -117,4 +121,5 @@ input:focus{
     font-family: 'Open Sans', sans-serif;
     font-size: 30px;
     text-align: center;
+    
 }

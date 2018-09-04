@@ -11,7 +11,8 @@ export default class C_add extends Component{
             item:{},
             id:'',
             name:'',
-            price:''
+            price:'',
+            img:''
         }
 
     }
@@ -22,8 +23,8 @@ export default class C_add extends Component{
         })
     }
 
-    updateBin(name,price){
-        axios.put(`/api/product_c/${this.props.match.params.id}`,{product_name:name,price:price})
+    updateBin(name,price,img){
+        axios.post(`/api/product_c/${this.props.match.params.id}`,{product_name:name,price:price,img:img})
         .then(results=>{this.setState({item:results.data[0]})})
     }
     
@@ -34,6 +35,10 @@ export default class C_add extends Component{
 
     handleUpdatePrice(value){
         this.setState({price:value})
+    }
+
+    handleUpdateImage(value){
+        this.setState({img:value})
     }
 
     render(){
@@ -50,8 +55,12 @@ export default class C_add extends Component{
                 
                 <h3 className="input-title">Price</h3>
                 <input className="add-input" type="text" placeholder="$0.00" onChange={e=>this.handleUpdatePrice(e.target.value)}/>
+
+                 <h3 className="input-title">Image</h3>
+                <input className="add-input" type="text" placeholder="Image URL" onChange={e=>this.handleUpdateImage(e.target.value)}/>
+
                 <br/>
-                <Link to ='/charlie'><button className="add-button" onClick={()=>this.updateBin(this.state.name,this.state.price)}><h1 className="add-button-text">+ Add Inventory</h1></button></Link>
+                <Link to ='/charlie'><button className="add-button" onClick={()=>this.updateBin(this.state.name,this.state.price,this.state.img)}><h1 className="add-button-text">+ Add Inventory</h1></button></Link>
                 
                 </div>
         )

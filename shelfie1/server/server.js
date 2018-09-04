@@ -9,6 +9,7 @@ const Acontroller=require('./ShelfA_Controller');
 const Bcontroller=require('./ShelfB_Controller');
 const Ccontroller=require('./ShelfC_Controller');
 const Dcontroller=require('./ShelfD_Controller');
+const path=require('path');
 
 const app= express();
 massive(process.env.CONNECTION_STRING).then(dbInstance=>{
@@ -17,6 +18,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance=>{
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname,'src')));
 
 //Table A Endpoints
 app.post('/api/product_a',Acontroller.create)

@@ -40,14 +40,11 @@ export default class InventoryA extends Component{
     
      handleUpdate(name,price){
          
-         console.log("pre-axios:", name, price)
+        //  console.log("pre-axios:", name, price)
 
-            axios.put(`/api/product_a/${this.props.match.params.id}/`,{product_name:name, price:price})
-            .then(results=>{
-                
-            this.setState({item:results.data[0]})
+        return axios.put(`/api/product_a/${this.props.match.params.id}/`,{product_name:name, price:price})
+            .then(results=>{this.setState({item:results.data[0]})
         })
-        
     }
 
     revert(){
@@ -69,12 +66,11 @@ export default class InventoryA extends Component{
                 <h1 className="inventory-number" >Bin {this.props.match.params.id}</h1>
                 </header>
                 <div className="page-container">
-<div className="image-container">
-    <img className="product-image" src= {this.state.item.img} 
-    alt="pic"/>
-</div>
+                <div className="image-container">
+                    <img className="product-image" src= {this.state.item.img} alt="pic"/>
+                </div>
                 
-               { (this.state.disabled)?(
+                    { (this.state.disabled)?(
                     <div>
                         <h3 className="product-input-title">Name</h3>
                         <input className="inventory-input" disabled value={this.state.item.product_name}/>
