@@ -1,0 +1,1 @@
+Select * from ShelfB order by id asc;

@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../inventory.css';
 import logo from '../../logo.png';
 
-export default class InventoryA extends Component{
+export default class InventoryD extends Component{
     constructor(){
         super()
         this.state={
@@ -19,7 +19,7 @@ export default class InventoryA extends Component{
     }
 
     componentDidMount(){
-       return axios.get(`/api/product_a/${this.props.match.params.id}`).then(results=>{
+       return axios.get(`/api/product_d/${this.props.match.params.id}`).then(results=>{
             this.setState({item:results.data[0]})
             
 
@@ -42,7 +42,7 @@ export default class InventoryA extends Component{
          
          console.log("pre-axios:", name, price)
 
-            axios.put(`/api/product_a/${this.props.match.params.id}/`,{product_name:name, price:price})
+            axios.put(`/api/product_d/${this.props.match.params.id}/`,{product_name:name, price:price})
             .then(results=>{
                 
             this.setState({item:results.data[0]})
@@ -55,7 +55,7 @@ export default class InventoryA extends Component{
     }
 
     deleteProduct(id){
-        axios.delete(`/api/product_a/${id}`).then(results => 
+        axios.delete(`/api/product_d/${id}`).then(results => 
         this.setState({item:results.data[0]}))
     }
 
@@ -65,7 +65,7 @@ export default class InventoryA extends Component{
             <div>
                 <header className='inventory-banner'>
                <Link to ='/'><img src={logo} className='inventory-logo' alt="logo"/></Link>
-               <Link to = '/alpha' className="inventory-title"> <h1 className="inventory-title">Shelf A</h1></Link>
+               <Link to = '/delta' className="inventory-title"> <h1 className="inventory-title">Shelf D</h1></Link>
                 <h1 className="inventory-number" >Bin {this.props.match.params.id}</h1>
                 </header>
                 <div className="page-container">
@@ -84,7 +84,7 @@ export default class InventoryA extends Component{
                         <br/>
                         <div className="button-container">
                         <button className='edit-button' onClick={this.handleEdit}>EDIT</button>
-                        <Link to='/alpha'><button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.id)}>DELETE</button></Link>
+                        <Link to='/delta'><button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.id)}>DELETE</button></Link>
                         </div>
                     </div>
                     ):(
@@ -101,14 +101,11 @@ export default class InventoryA extends Component{
                             this.state.name, this.state.price)} 
                         
                         >SAVE</button>
-                       <Link to='/alpha'> <button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.id)}>DELETE</button></Link>
+                       <Link to='/delta'> <button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.id)}>DELETE</button></Link>
                         </div>
                         
                     </div>)}
-                
-
-                
-             </div>  
+                </div>  
             </div>
         )
     }

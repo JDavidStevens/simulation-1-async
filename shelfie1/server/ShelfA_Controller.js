@@ -38,9 +38,9 @@ readBin:(req,res,next)=>{
 
 update:(req,res,next)=>{
     const dbInstance=req.app.get('db');
-    
-    dbInstance.update_binA([req.params.id,req.body.price,req.body.name])
-    .then(product=>{  console.log("update:", product);
+    const {params,body}=req;
+    dbInstance.update_binA([params.id,body.product_name,body.price])
+    .then(product=>{  
         res.status(200).send(product)})
     
     .catch(err=>{
@@ -51,8 +51,9 @@ update:(req,res,next)=>{
 
 delete: (req,res,next)=>{
     const dbInstance= req.app.get('db');
+    const {params} = req;
 
-    dbInstance.delete_binA()
+    dbInstance.delete_binA([params.id])
     .then(()=>res.sendStatus(200))
     .catch(err=>{
         res.status(500).send({errorMessage:"Oops! Something went wrong. Our engineers have been informed!"});

@@ -1,0 +1,1 @@
+Insert Into shelfC (product_name,Price)Values($1,$2) where id = $1;
