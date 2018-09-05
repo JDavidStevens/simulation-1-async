@@ -1,1 +1,1 @@
-Select * from Inventory where shelf_id=$1;
+Select * from Inventory where shelf_id=$1 order by bin_id asc;

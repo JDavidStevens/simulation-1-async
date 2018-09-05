@@ -42,8 +42,8 @@ export default <Switch>
 
 <Route component={Homepage} exact path='/' />
 <Route component={Shelf} path='/shelf/:shelf'/>
-<Route component={Inventory} path='/inventory/:bin'/>
-<Route component={Add} path= '/add/:bin'/>
+<Route component={Inventory} path='/inventory/:shelf/:bin'/>
+<Route component={Add} path= '/add/:shelf/:bin'/>
 </Switch>
 
 //Revised sketch

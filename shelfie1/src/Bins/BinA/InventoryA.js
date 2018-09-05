@@ -160,7 +160,7 @@ export default class Inventory extends Component{
          
         //  console.log("pre-axios:", name, price)
 
-        return axios.put(`/api/product_a/${this.props.match.params.id}/`,{product_name:name, price:price})
+        return axios.put(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.bin}/`,{product_name:name, price:price})
             .then(results=>{
                 this.setState({item:results.data[0],disabled:true})
                  
@@ -172,8 +172,8 @@ export default class Inventory extends Component{
         this.setState({disabled:true})
     }
 
-    deleteProduct(id){
-        axios.delete(`/api/product_a/${id}`).then(results => 
+    deleteProduct(){
+        axios.delete(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.bin}`).then(results => 
         this.setState({item:results.data[0]}))
     }
 
@@ -183,8 +183,8 @@ export default class Inventory extends Component{
             <div>
                 <header className='inventory-banner'>
                <Link to ='/'><img src={logo} className='inventory-logo' alt="logo"/></Link>
-               <Link to = '/alpha' className="inventory-title"> <h1 className="inventory-title">Shelf A</h1></Link>
-                <h1 className="inventory-number" >Bin {this.props.match.params.id}</h1>
+               <Link to = {`/shelf/${this.props.match.params.shelf}`} className="inventory-title"> <h1 className="inventory-title">Shelf {this.props.match.params.shelf}</h1></Link>
+                <h1 className="inventory-number" >Bin {this.props.match.params.bin}</h1>
                 </header>
                 <div className="page-container">
                 <div className="image-container">
@@ -201,7 +201,7 @@ export default class Inventory extends Component{
                         <br/>
                         <div className="button-container">
                         <button className='edit-button' onClick={this.handleEdit}>EDIT</button>
-                        <Link to='/alpha'><button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.id)}>DELETE</button></Link>
+                        <Link to={`/shelf/${this.props.match.params.shelf}`}><button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.shelf,this.props.match.params.bin)}>DELETE</button></Link>
                         </div>
                     </div>
                     ):(
@@ -218,7 +218,7 @@ export default class Inventory extends Component{
                             this.state.name, this.state.price)} 
                         
                         >SAVE</button>
-                       <Link to='/alpha'> <button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.id)}>DELETE</button></Link>
+                       <Link to={`/shelf/${this.props.match.params.shelf}`}> <button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.shelf,this.props.match.params.bin)}>DELETE</button></Link>
                         </div>
                         
                     </div>)}

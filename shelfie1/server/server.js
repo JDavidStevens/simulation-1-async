@@ -50,8 +50,12 @@ app.use(express.static(path.join(__dirname,'src')));
 
 
 //Revised endpoint sketch
-app.get('/api/products/:id',Controller.readTable)
-app.get('/api/product/:id',Controller.readBin)
+app.post('/api/product/:shelf/:bin',Controller.create)
+app.get('/api/products/:shelf',Controller.readTable)
+app.get('/api/product/:shelf/:bin',Controller.readBin)
+app.put('/api/product/:shelf/:bin',Controller.update)
+
+app.delete('/api/product/:shelf/:bin',Controller.delete)
 
 const port= 3025;
 app.listen(port,()=>{console.log(`It's Alive!!! on port ${port}`)})
