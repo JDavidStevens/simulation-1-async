@@ -80,7 +80,7 @@ create: (req,res,next)=>{
 readTable: (req,res,next)=>{
     const dbInstance=req.app.get('db');
     
-    dbInstance.read_table2([req.params.shelf])
+    dbInstance.read_table([req.params.shelf])
     .then(products=>res.status(200).send(products))
     .catch(err=>{
         res.status(500).send({errorMessage:"Oops! Something went wrong. Our engineers have been informed!"});

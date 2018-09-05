@@ -1,1 +1,0 @@
-Select * from ShelfB where id = $1;

@@ -1,1 +1,0 @@
-Select * from ShelfA order by id asc;
