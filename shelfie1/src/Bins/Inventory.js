@@ -65,7 +65,7 @@ export default class Inventory extends Component{
             <div>
                 <header className='inventory-banner'>
                <Link to ='/'><img src={logo} className='inventory-logo' alt="logo"/></Link>
-               <Link to = {`/shelf/${this.props.match.params.shelf}`} className="inventory-title"> <h1 className="inventory-title">Shelf {this.props.match.params.shelf}</h1></Link>
+               <Link to = {`/shelf/${this.props.match.params.shelf}`} className="title-holder"> <h1 className="inventory-title">Shelf {this.props.match.params.shelf}</h1></Link>
                 <h1 className="inventory-number" >Bin {this.props.match.params.bin}</h1>
                 </header>
                 <div className="page-container">

@@ -26,7 +26,7 @@ componentDidMount(){
             if(element.product_name===null){
                 return <Link key={index} to ={`/add/${this.props.match.params.shelf}/${element.bin_id}`}><button  className="bin-no-inv-button">+ Add Inventory</button></Link>
               }else{ 
-              return <Link key={index} to = {`/inventory/${this.props.match.params.shelf}/${element.bin_id}`}><button key="element.id" className="bin-with-inv-button">Bin {element.bin_id}</button></Link>}
+              return <Link key={index} to = {`/inventory/${this.props.match.params.shelf}/${element.bin_id}`}><button key="element.id" className="bin-with-inv-button"><p className="shelf-button-text">Bin {element.bin_id}</p></button></Link>}
             })        
              
              

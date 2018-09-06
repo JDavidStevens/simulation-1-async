@@ -43,10 +43,10 @@ export default class A_add extends Component{
     render(){
         return(
             <div>
-                <header className='inventory-banner'>
-               <Link to ='/'><img src={logo} className='inventory-logo' alt="logo"/></Link>
-               <Link to = {`/shelf/${this.props.match.params.shelf}`} className="inventory-title"> <h1 className="inventory-title">Shelf {this.props.match.params.shelf}</h1></Link>
-                <h1 className="inventory-number" >Bin {this.props.match.params.bin}</h1>
+                <header className='add-banner'>
+               <Link to ='/'><img src={logo} className='add-logo' alt="logo"/></Link>
+               <Link to = {`/shelf/${this.props.match.params.shelf}`} className="add-title-holder"> <h1 className="add-title">Shelf {this.props.match.params.shelf}</h1></Link>
+                <h1 className="add-number" >Add to Bin {this.props.match.params.bin}</h1>
                 </header>
                 
                 <h3 className="input-title">Name</h3>
