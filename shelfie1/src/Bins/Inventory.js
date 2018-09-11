@@ -15,12 +15,11 @@ export default class Inventory extends Component{
         }
         this.handleEdit=this.handleEdit.bind(this);
         this.handleUpdate=this.handleUpdate.bind(this);
-        this.revert=this.revert.bind(this);
     }
 
     componentDidMount(){
        return axios.get(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.bin}`).then(results=>{
-            this.setState({item:results.data[0]})
+            this.setState({name:results.data[0].product_name, price: results.data[0].price})
             
 
         })
@@ -39,19 +38,13 @@ export default class Inventory extends Component{
      }
     
      handleUpdate(name,price){
-         
-        //  console.log("pre-axios:", name, price)
-
-        return axios.put(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.bin}/`,{product_name:name, price:price})
+         console.log(name,price);
+        return axios.put(`/api/product/${this.props.match.params.shelf}/${this.props.match.params.bin}/`,{product_name:name,        price:price})
             .then(results=>{
                 this.setState({item:results.data[0],disabled:true})
                  
-            console.log(results);
+            
         })
-    }
-
-    revert(){
-        this.setState({disabled:true})
     }
 
     deleteProduct(){
@@ -76,10 +69,10 @@ export default class Inventory extends Component{
                     { (this.state.disabled)?(
                     <div>
                         <h3 className="product-input-title">Name</h3>
-                        <input className="inventory-input" disabled value={this.state.item.product_name}/>
+                        <input className="inventory-input" disabled value={this.state.name}/>
                         <br/>
                         <h3 className="product-input-title">Price</h3>
-                        <input className="inventory-input" disabled value= {this.state.item.price}/>
+                        <input className="inventory-input" disabled value= {this.state.price}/>
                         <br/>
                         <div className="button-container">
                         <button className='edit-button' onClick={this.handleEdit}>EDIT</button>
@@ -89,26 +82,26 @@ export default class Inventory extends Component{
                     ):(
                     <div>
                         <h3 className="product-input-title">Name</h3>
-                        <input className="inventory-input" onChange={e=>this.updateName(e.target.value)}/>
+                        <input className="inventory-input" value={this.state.name} onChange={e=>this.updateName(e.target.value)}/>
                         <br/>
-                        <h3 className="product-input-title">Price</h3>
-                        <input className="inventory-input" onChange={e=>this.updatePrice(e.target.value)}/>
+                        <h3 className="product-input-title" >Price</h3>
+                        <input className="inventory-input" value={this.state.price} onChange={e=>this.updatePrice(e.target.value)}/>
                         <br/>
                         <div className="button-container">
                         <button className="save-button" onClick={()=>this.handleUpdate(
-                            // this.props.match.params.id,
                             this.state.name, this.state.price)} 
-                        
-                        >SAVE</button>
-                       <Link to={`/shelf/${this.props.match.params.shelf}`}> <button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.shelf,this.props.match.params.bin)}>DELETE</button></Link>
-                        </div>
-                        
-                    </div>)}
-                
-
-                
-             </div>  
-            </div>
-        )
+                            >SAVE</button>
+                           <Link to={`/shelf/${this.props.match.params.shelf}`}> <button className='delete-button' onClick={()=>this.deleteProduct(this.props.match.params.shelf,this.props.match.params.bin)}>DELETE</button></Link>
+                            </div>
+                        </div>)}
+                 </div>  
+                </div>
+            )
+        }
     }
-}
+                            
+                            
+                    
+    
+                    
+                            
